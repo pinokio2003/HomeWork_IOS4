@@ -41,6 +41,7 @@
 			isa = PBXGroup;
 			children = (
 				0E290E0D29956DFE00BFFF1B /* HomeWork_IOS4 */,
+				0E290E262996547D00BFFF1B /* Trash */,
 				0E290E0C29956DFE00BFFF1B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,15 +57,46 @@
 		0E290E0D29956DFE00BFFF1B /* HomeWork_IOS4 */ = {
 			isa = PBXGroup;
 			children = (
-				0E290E0E29956DFE00BFFF1B /* AppDelegate.swift */,
-				0E290E1029956DFE00BFFF1B /* SceneDelegate.swift */,
+				0E290E292996551A00BFFF1B /* Views */,
+				0E290E282996550F00BFFF1B /* Models */,
+				0E290E272996550500BFFF1B /* Controllers */,
 				0E290E1229956DFE00BFFF1B /* ViewController.swift */,
-				0E290E1429956DFE00BFFF1B /* Main.storyboard */,
 				0E290E1729956DFF00BFFF1B /* Assets.xcassets */,
-				0E290E1929956DFF00BFFF1B /* LaunchScreen.storyboard */,
 				0E290E1C29956DFF00BFFF1B /* Info.plist */,
 			);
 			path = HomeWork_IOS4;
+			sourceTree = "<group>";
+		};
+		0E290E262996547D00BFFF1B /* Trash */ = {
+			isa = PBXGroup;
+			children = (
+				0E290E1429956DFE00BFFF1B /* Main.storyboard */,
+				0E290E1929956DFF00BFFF1B /* LaunchScreen.storyboard */,
+				0E290E1029956DFE00BFFF1B /* SceneDelegate.swift */,
+				0E290E0E29956DFE00BFFF1B /* AppDelegate.swift */,
+			);
+			path = Trash;
+			sourceTree = "<group>";
+		};
+		0E290E272996550500BFFF1B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0E290E282996550F00BFFF1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0E290E292996551A00BFFF1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

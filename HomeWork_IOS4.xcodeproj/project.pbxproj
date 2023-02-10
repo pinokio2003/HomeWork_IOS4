@@ -57,10 +57,9 @@
 		0E290E0D29956DFE00BFFF1B /* HomeWork_IOS4 */ = {
 			isa = PBXGroup;
 			children = (
+				0E290E272996550500BFFF1B /* Controllers */,
 				0E290E292996551A00BFFF1B /* Views */,
 				0E290E282996550F00BFFF1B /* Models */,
-				0E290E272996550500BFFF1B /* Controllers */,
-				0E290E1229956DFE00BFFF1B /* ViewController.swift */,
 				0E290E1729956DFF00BFFF1B /* Assets.xcassets */,
 				0E290E1C29956DFF00BFFF1B /* Info.plist */,
 			);
@@ -81,6 +80,7 @@
 		0E290E272996550500BFFF1B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0E290E1229956DFE00BFFF1B /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

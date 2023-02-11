@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DB61B422997B1F20029DFFE /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB61B412997B1F20029DFFE /* QuizController.swift */; };
 		0E290E0F29956DFE00BFFF1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E290E0E29956DFE00BFFF1B /* AppDelegate.swift */; };
 		0E290E1129956DFE00BFFF1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E290E1029956DFE00BFFF1B /* SceneDelegate.swift */; };
 		0E290E1329956DFE00BFFF1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E290E1229956DFE00BFFF1B /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DB61B412997B1F20029DFFE /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
 		0E290E0B29956DFE00BFFF1B /* HomeWork_IOS4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork_IOS4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E290E0E29956DFE00BFFF1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E290E1029956DFE00BFFF1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				0E290E1229956DFE00BFFF1B /* ViewController.swift */,
 				0E290E2A2996903A00BFFF1B /* LoginViewController.swift */,
+				0DB61B412997B1F20029DFFE /* QuizController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			files = (
 				0E290E2B2996903A00BFFF1B /* LoginViewController.swift in Sources */,
 				0E290E1329956DFE00BFFF1B /* ViewController.swift in Sources */,
+				0DB61B422997B1F20029DFFE /* QuizController.swift in Sources */,
 				0E290E0F29956DFE00BFFF1B /* AppDelegate.swift in Sources */,
 				0E290E1129956DFE00BFFF1B /* SceneDelegate.swift in Sources */,
 				0E290E2D2997A14800BFFF1B /* LoginTextField.swift in Sources */,

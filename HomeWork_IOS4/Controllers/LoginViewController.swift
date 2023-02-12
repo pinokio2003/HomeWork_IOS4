@@ -63,6 +63,7 @@ class Login: UIViewController, UITextFieldDelegate{
         view.addSubview(login)
         login.delegate = self
         login.inputAccessoryView = toolBarPass
+        login.isSecureTextEntry = true
         login.translatesAutoresizingMaskIntoConstraints = false
         login.placeholder = "Password"
         login.clearButtonMode = .always
@@ -160,9 +161,16 @@ class Login: UIViewController, UITextFieldDelegate{
     @objc func chechPassword(){
         let key = nameUser
         let value = passwordUser
+        let quizController = QuizController()
         
         if passwords.keys.contains(key) && passwords.values.contains(value){
             lableInfo.loginLable.text = "Welcome to game"
+            
+            quizController.modalPresentationStyle = .fullScreen
+            present(quizController, animated: true) {
+                print("Go to quiz")
+                
+            }
         } else {
             lableInfo.loginLable.text = "Password incorrect"
         }

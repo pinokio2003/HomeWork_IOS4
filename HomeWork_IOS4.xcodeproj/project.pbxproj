@@ -16,6 +16,9 @@
 		0E290E1B29956DFF00BFFF1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E290E1929956DFF00BFFF1B /* LaunchScreen.storyboard */; };
 		0E290E2B2996903A00BFFF1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E290E2A2996903A00BFFF1B /* LoginViewController.swift */; };
 		0E290E2D2997A14800BFFF1B /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E290E2C2997A14800BFFF1B /* LoginTextField.swift */; };
+		0E33244529996B2F00890B8A /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E33244429996B2F00890B8A /* LoginButton.swift */; };
+		0E9B70372997B60900FC29CB /* Passwords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9B70362997B60900FC29CB /* Passwords.swift */; };
+		0EC85FA0299926D300B54457 /* LoginLabele.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC85F9F299926D300B54457 /* LoginLabele.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		0E290E1C29956DFF00BFFF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E290E2A2996903A00BFFF1B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0E290E2C2997A14800BFFF1B /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		0E33244429996B2F00890B8A /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		0E9B70362997B60900FC29CB /* Passwords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passwords.swift; sourceTree = "<group>"; };
+		0EC85F9F299926D300B54457 /* LoginLabele.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLabele.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 		0E290E282996550F00BFFF1B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0E9B70362997B60900FC29CB /* Passwords.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,9 +110,19 @@
 		0E290E292996551A00BFFF1B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0E290E2C2997A14800BFFF1B /* LoginTextField.swift */,
+				0EC85F9E2999265800B54457 /* LoginMenu */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0EC85F9E2999265800B54457 /* LoginMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0E290E2C2997A14800BFFF1B /* LoginTextField.swift */,
+				0EC85F9F299926D300B54457 /* LoginLabele.swift */,
+				0E33244429996B2F00890B8A /* LoginButton.swift */,
+			);
+			path = LoginMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,11 +197,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E290E2B2996903A00BFFF1B /* LoginViewController.swift in Sources */,
+				0E33244529996B2F00890B8A /* LoginButton.swift in Sources */,
 				0E290E1329956DFE00BFFF1B /* ViewController.swift in Sources */,
+				0EC85FA0299926D300B54457 /* LoginLabele.swift in Sources */,
 				0DB61B422997B1F20029DFFE /* QuizController.swift in Sources */,
 				0E290E0F29956DFE00BFFF1B /* AppDelegate.swift in Sources */,
 				0E290E1129956DFE00BFFF1B /* SceneDelegate.swift in Sources */,
 				0E290E2D2997A14800BFFF1B /* LoginTextField.swift in Sources */,
+				0E9B70372997B60900FC29CB /* Passwords.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

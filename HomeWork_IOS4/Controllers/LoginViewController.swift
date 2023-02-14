@@ -161,7 +161,7 @@ class Login: UIViewController, UITextFieldDelegate{
     @objc func chechPassword(){
         let key = nameUser
         let value = passwordUser
-        let quizController = QuizController()
+        let quizController = MainQuizQuaestions()
         
         if passwords.keys.contains(key) && passwords.values.contains(value){
             lableInfo.loginLable.text = "Welcome to game"

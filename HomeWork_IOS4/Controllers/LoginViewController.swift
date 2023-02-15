@@ -13,15 +13,56 @@ class Login: UIViewController, UITextFieldDelegate{
     let toolBarPass = UIToolbar()
     let lable = LoginLabeleClass()
     let lableInfo = LoginLabeleClass()
-    let loginTextField = LoginTextField()
-    let passTextField = LoginTextField()
-    let loginButton = LoginButton()
 
+    
+    
+//MARK: - Login Button import settings
+    
+    let loginButton: LoginButton = {
+        let button = LoginButton()
+        button.titleLabel?.font = UIFont(name: "Avenir-Black", size: 20)
+        button.setTitleColor(.gray, for: .normal)
+        button.setTitle("Sigin", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+//MARK: - Login TextField import settings
+    
+    let loginTextField: LoginTextField = {
+        let login = LoginTextField()
+        login.backgroundColor = .customBackgroundColor
+        login.font = UIFont(name: "Avenir-Black", size: 20)
+        login.translatesAutoresizingMaskIntoConstraints = false
+        login.placeholder = "User Name"
+        login.clearButtonMode = .always
+        login.keyboardType = .default
+        login.textAlignment = .center
+        login.keyboardAppearance = .default
+        login.clearButtonMode = .always
+        return login
+    }()
+//MARK: - Password TextField import settings
+    
+    let passTextField: LoginTextField = {
+        let pass = LoginTextField()
+        pass.backgroundColor = .customBackgroundColor
+        pass.font = UIFont(name: "Avenir-Black", size: 20)
+        pass.translatesAutoresizingMaskIntoConstraints = false
+        pass.placeholder = "Password"
+        pass.clearButtonMode = .always
+        pass.keyboardType = .default
+        pass.textAlignment = .center
+        pass.keyboardAppearance = .default
+        pass.clearButtonMode = .always
+        pass.isSecureTextEntry = true
+        return pass
+    }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
+        view.backgroundColor = .customBackgroundColor
         DoneButtonLogginSetup()
         lableSetup()
         lableInfoSetup()
@@ -29,8 +70,15 @@ class Login: UIViewController, UITextFieldDelegate{
         buttonSetup()
         userFieldSetup()
         passFieldSetup()
-        constraine()
+        
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        constraine()
+        loginButton.layer.cornerRadius = 60
+    }
+    
   //MARK: - setup
     func lableSetup(){
         let lbl = lable.loginLable
@@ -47,34 +95,27 @@ class Login: UIViewController, UITextFieldDelegate{
         lbl.numberOfLines = 2
         lbl.text = ""
     }
-    
+    //textField - Login
     func userFieldSetup(){
-        let login = loginTextField.textField
-        view.addSubview(login)
-        login.inputAccessoryView = toolBar
-        login.delegate = self
-        login.translatesAutoresizingMaskIntoConstraints = false
-        login.placeholder = "User Name"
-        login.clearButtonMode = .always
+        view.addSubview(loginTextField)
+        loginTextField.inputAccessoryView = toolBar
+        loginTextField.delegate = self
     }
-    
+    //textField - Password
     func passFieldSetup(){
-        let login = passTextField.textField
-        view.addSubview(login)
-        login.delegate = self
-        login.inputAccessoryView = toolBarPass
-        login.isSecureTextEntry = true
-        login.translatesAutoresizingMaskIntoConstraints = false
-        login.placeholder = "Password"
-        login.clearButtonMode = .always
+        
+        view.addSubview(passTextField)
+        passTextField.delegate = self
+        passTextField.inputAccessoryView = toolBarPass
     }
     
+//MARK: - Button
     func buttonSetup(){
-        let button = loginButton.button
-        view.addSubview(button)
-        button.backgroundColor = UIColor(red: 255, green: 255, blue: 240, alpha: 1)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(chechPassword), for: .touchDown)
+        view.addSubview(loginButton)
+        
+        loginButton.addTarget(self, action: #selector(chechPassword), for: .touchDown)
+        loginButton.addTarget(self, action: #selector(unTuchFunc), for: .touchUpOutside)
+        loginButton.addTarget(self, action: #selector(unTuchFunc), for: .touchUpInside)
     }
     
    //MARK: - Constraints:
@@ -84,22 +125,22 @@ class Login: UIViewController, UITextFieldDelegate{
             lable.loginLable.centerYAnchor.constraint(equalTo: view.centerYAnchor,constant: -200),
             lable.loginLable.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            loginTextField.textField.topAnchor.constraint(equalTo: lable.loginLable.bottomAnchor, constant: 30),
-            loginTextField.textField.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 30),
-            loginTextField.textField.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -30),
-            loginTextField.textField.heightAnchor.constraint(equalToConstant: 50),
+            loginTextField.topAnchor.constraint(equalTo: lable.loginLable.bottomAnchor, constant: 30),
+            loginTextField.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 30),
+            loginTextField.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -30),
+            loginTextField.heightAnchor.constraint(equalToConstant: 50),
             
-            passTextField.textField.topAnchor.constraint(equalTo: loginTextField.textField.bottomAnchor, constant: 30),
-            passTextField.textField.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 30),
-            passTextField.textField.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -30),
-            passTextField.textField.heightAnchor.constraint(equalToConstant: 50),
+            passTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 30),
+            passTextField.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 30),
+            passTextField.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -30),
+            passTextField.heightAnchor.constraint(equalToConstant: 50),
             
-            loginButton.button.topAnchor.constraint(equalTo:passTextField.textField.bottomAnchor, constant: 30),
-            loginButton.button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginButton.button.heightAnchor.constraint(equalToConstant: 120),
-            loginButton.button.widthAnchor.constraint(equalToConstant: 120),
+            loginButton.topAnchor.constraint(equalTo:passTextField.bottomAnchor, constant: 30),
+            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loginButton.heightAnchor.constraint(equalToConstant: 120),
+            loginButton.widthAnchor.constraint(equalToConstant: 120),
             
-            lableInfo.loginLable.topAnchor.constraint(equalTo: loginButton.button.bottomAnchor, constant: 30),
+            lableInfo.loginLable.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 30),
             lableInfo.loginLable.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 30),
             lableInfo.loginLable.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -30),
             
@@ -137,7 +178,7 @@ class Login: UIViewController, UITextFieldDelegate{
     }
     //MARK: - Done button selector login:
     @objc func doneButtonLoggin(_ sender: UIBarButtonItem){
-        loginTextField.textField.resignFirstResponder()
+        loginTextField.resignFirstResponder()
 //        passTextField.textField.isEnabled = true
         print("Name user: \(nameUser)")
         
@@ -145,7 +186,7 @@ class Login: UIViewController, UITextFieldDelegate{
     
     //MARK: - Done button selector password:
     @objc func doneButtonPass(_ sender: UIBarButtonItem){
-        passTextField.textField.resignFirstResponder()
+        passTextField.resignFirstResponder()
 //        loginTextField.textField.isEnabled = true
         print("Password user: \(passwordUser)")
     }
@@ -153,17 +194,18 @@ class Login: UIViewController, UITextFieldDelegate{
     // функция сохоаняет каждый символ который появляеться на textField, мы просто сохраняем каждый раз в стрингу
         
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        nameUser = loginTextField.textField.text ?? ""
-        passwordUser = passTextField.textField.text ?? ""
+        nameUser = loginTextField.text ?? ""
+        passwordUser = passTextField.text ?? ""
     }
     //MARK: - check password
     
     @objc func chechPassword(){
         let key = nameUser
         let value = passwordUser
-        let quizController = QuizController()
+        let quizController = MainQuizQuaestions()
         
         if passwords.keys.contains(key) && passwords.values.contains(value){
+            tuchFunc()
             lableInfo.loginLable.text = "Welcome to game"
             
             quizController.modalPresentationStyle = .fullScreen
@@ -172,7 +214,23 @@ class Login: UIViewController, UITextFieldDelegate{
                 
             }
         } else {
+            tuchFunc()
             lableInfo.loginLable.text = "Password incorrect"
         }
+    }
+    //MARK: - Изменение настроек для анимации кнопки:
+    @objc func tuchFunc(){
+        loginButton.darkShadow.shadowOffset = CGSize(width: -7, height: -7)
+        loginButton.lightShadow.shadowOffset = CGSize(width: 9, height: 9)
+        loginButton.darkShadow.shadowOpacity = 0.2
+        loginButton.lightShadow.shadowOpacity = 0.9
+      
+    }
+    
+    @objc func unTuchFunc(){
+        loginButton.darkShadow.shadowOffset = CGSize(width: 10, height: 10)
+        loginButton.lightShadow.shadowOffset = CGSize(width: -7, height: -7)
+        loginButton.darkShadow.shadowOpacity = 0.15
+        loginButton.lightShadow.shadowOpacity = 0.5
     }
 }
